@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <script src="browser.js"></script>
+  <script src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-3.3.1.min.js"></script>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+</head>
+
+<body class="container-fluid bg-success h-100 pb-5 pt-5 mb-0" style="width:80%;">
+
+<div class="jumbotron h-100 mt-5">
+  <h3 class="text-warning" style="text-align:center; margin-bottom:20px;">Chat</h3>
+  <!-- форма для отправки сообщений -->
+  <form name="publish">
+    <input type="text" class="form-control mb-1" name="message" style="margin-bottom:10px;"/>
+    <input type="submit" class="form-control mt-3" value="Send message!" style="width:50%; margin:auto;"/>
+  </form>
+</div>
+<div class="jumbotron">
+  <h3 class="text-warning" style="text-align:center; margin-bottom:20px;">Chat history:</h3>
+  <!-- здесь будут появляться входящие сообщения -->
+  <div id="subscribe"></div>
+</div>
+  <script>
+    new PublishForm(document.forms.publish, 'publish');
+    // random url to fix https://code.google.com/p/chromium/issues/detail?id=46104
+    new SubscribePane(document.getElementById('subscribe'), 'subscribe?random=' + Math.random());
+  </script>
+
+</body>
+
+</html>
