@@ -4,9 +4,6 @@ function PublishForm(form, url) {
   function sendMessage(message) {
     var xhr = new XMLHttpRequest();
     xhr.open("POST", url, true);
-    // просто отсылаю сообщение "как есть" без кодировки
-    // если бы было много данных, то нужно было бы отослать JSON из объекта с ними
-    // или закодировать их как-то иначе
     xhr.send(message);
   }
 
